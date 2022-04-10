@@ -27,7 +27,7 @@ const TextTitle = styled.h1`
       padding: 0 24px;
       color: ${theme.colors.primary};
       background: ${cover
-        ? theme.colors.black
+        ? "white"
         : `linear-gradient(
         45deg,
         ${theme.colors.secondary} 0%,
@@ -54,16 +54,16 @@ const TextCaption = styled.p`
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 1px;
-  color: ${(p) => p.theme.colors.black};
+  color: ${(p) => (p.cover ? "white" : p.theme.colors.black)};
   ${layout};
   ${space};
   ${typography};
   em {
     text-decoration: underline;
-    color: ${(p) => p.theme.colors.black};
+    color: ${(p) => (p.cover ? "white" : p.theme.colors.black)};
     font-weight: 600;
     a:-webkit-any-link {
-      color: ${(p) => p.theme.colors.black};
+      color: ${(p) => (p.cover ? "white" : p.theme.colors.black)};
       cursor: pointer;
       text-decoration: underline;
     }
@@ -76,7 +76,7 @@ const TextInfo = styled.p`
   font-size: 20px;
   line-height: 28px;
   letter-spacing: 1px;
-  color: ${(p) => p.theme.colors.black};
+  color: ${(p) => (p.cover ? "white" : p.theme.colors.black)};
   ${layout};
   ${space};
   ${typography};
@@ -103,7 +103,9 @@ const Hero = ({ guest, cover, onClick }) => {
         width="100%"
       >
         <Fade up>
-          <TextInfo mb={16}>THE WEDDING OF</TextInfo>
+          <TextInfo mb={16} cover={cover}>
+            THE WEDDING OF
+          </TextInfo>
           <TextTitle mb={16} px={8} cover={cover}>
             <em>Aditya & Putri</em>
           </TextTitle>
@@ -119,7 +121,7 @@ const Hero = ({ guest, cover, onClick }) => {
         alignItems="center"
       >
         {guest && cover && (
-          <TextCaption textAlign="center">
+          <TextCaption cover={cover} textAlign="center">
             Dear, <em>{guest}</em>
             <br /> you're invited to
             <br /> our wedding celebration!
