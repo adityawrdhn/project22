@@ -13,7 +13,7 @@ import Segment from "../../components/Segment";
 import { useTheme } from "../../containers/Theme";
 import { Section } from "./styles";
 const TextTitle = styled.h1`
-  ${({ theme }) => css`
+  ${({ theme, cover }) => css`
     font-family: "The Amsterdam", sans-serif;
     position: relative;
     font-style: normal;
@@ -26,11 +26,13 @@ const TextTitle = styled.h1`
     em {
       padding: 0 24px;
       color: ${theme.colors.primary};
-      background: linear-gradient(
+      background: ${cover
+        ? theme.colors.black
+        : `linear-gradient(
         45deg,
         ${theme.colors.secondary} 0%,
         ${theme.colors.primary} 100%
-      );
+      )`};
       font-weight: 400;
       background-clip: text;
       -webkit-background-clip: text;
@@ -58,9 +60,10 @@ const TextCaption = styled.p`
   ${typography};
   em {
     text-decoration: underline;
-    color: ${(p) => p.theme.colors.primary};
+    color: ${(p) => p.theme.colors.black};
+    font-weight: 600;
     a:-webkit-any-link {
-      color: ${(p) => p.theme.colors.primary};
+      color: ${(p) => p.theme.colors.black};
       cursor: pointer;
       text-decoration: underline;
     }
@@ -101,7 +104,7 @@ const Hero = ({ guest, cover, onClick }) => {
       >
         <Fade up>
           <TextInfo mb={16}>THE WEDDING OF</TextInfo>
-          <TextTitle mb={16} px={8}>
+          <TextTitle mb={16} px={8} cover={cover}>
             <em>Aditya & Putri</em>
           </TextTitle>
         </Fade>

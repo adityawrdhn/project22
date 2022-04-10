@@ -64,7 +64,7 @@ const CoverOverlay = styled(Segment)`
   right: 0;
   left: 0;
   bottom: 0;
-  background: ${(p) => p.theme.colors.whiteHover};
+  background: ${(p) => p.theme.colors.primaryHover};
   display: block;
   opacity: 0.9;
 `;
