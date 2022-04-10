@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { layout, space, typography } from "styled-system";
-import { Fade, Slide } from "react-reveal";
+import { Fade } from "react-reveal";
 import Segment from "../../components/Segment";
 import { Section } from "./styles";
 import Container from "../../components/Container";
@@ -160,7 +160,7 @@ const TheBride = () => {
             </OverrideSegment>
           </Col>
         </Row>
-        <Row justifyContent="center" mt={40}>
+        {/* <Row justifyContent="center" mt={40}>
           <Col>
             <Slide up delay={200}>
               <Segment
@@ -189,7 +189,7 @@ const TheBride = () => {
               </Segment>
             </Slide>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </Section>
   );

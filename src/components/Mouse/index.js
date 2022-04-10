@@ -4,13 +4,13 @@ import Segment from "../Segment";
 
 const ScrollDown = styled(Segment)`
   margin: auto;
-  width: 34px;
-  height: 55px;
+  width: 25px;
+  height: 35px;
 `;
 const Mousey = styled.div`
   width: 3px;
   padding: 10px 15px;
-  height: 35px;
+  height: 30px;
   border: 2px solid ${(p) => p.theme.colors.black70};
   border-radius: 25px;
   opacity: 0.75;

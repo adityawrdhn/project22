@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Segment from "../../components/Segment";
+import coverImage from "../../assets/cover.jpg";
+import { Fragment } from "react";
 export const CircleAbsoluteTop = styled.div`
   position: fixed;
   width: 400px;
@@ -41,7 +42,34 @@ export const CircleAbsoluteBottom = styled.div`
   }
 `;
 
-export const Section = ({ children, id, bg, flexDirection, zIndex }) => {
+const Cover = styled(Segment)`
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url(${coverImage});
+  background-position: 50% 50%;
+  background-size: cover;
+  display: block;
+  cursor: move;
+  cursor: grab;
+  cursor: -webkit-grab;
+`;
+const CoverOverlay = styled(Segment)`
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: ${(p) => p.theme.colors.whiteHover};
+  display: block;
+  opacity: 0.9;
+`;
+
+export const Section = ({ children, id, bg, flexDirection, zIndex, cover }) => {
   const theme = useTheme();
   return (
     <Segment
@@ -54,6 +82,12 @@ export const Section = ({ children, id, bg, flexDirection, zIndex }) => {
       display="flex"
       flexDirection={flexDirection || "row"}
     >
+      {cover && (
+        <Fragment>
+          <Cover />
+          <CoverOverlay />
+        </Fragment>
+      )}
       {children}
     </Segment>
   );

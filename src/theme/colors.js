@@ -4,11 +4,12 @@ const light = {
   blackHover: "#1a1a1a",
   black70: "#828282",
   black50: "#BDBDBD",
-  white: "rgba(255,249,239,0.9)",
+  white: "rgba(255,241,237,0.9)",
   whiteHover:
-    "linear-gradient(0deg, rgba(255,249,239,0.9) 0%, rgba(255,249,239,0.8) 40%, rgba(255,249,239,0.2) 100%)",
+    "linear-gradient(0deg, rgba(255,241,237,0.9) 0%, rgba(255,241,237,0.8) 40%, rgba(255,241,237,0.2) 100%)",
   primary: "rgb(224,69,102)",
-  primaryHover: "linear-gradient(0deg, rgb(235,139,135) 0%, rgb(224,69,102) 100%)",
+  primaryHover:
+    "linear-gradient(0deg, rgb(235,139,135) 0%, rgb(224,69,102) 100%)",
   secondary: "rgb(235,139,135)",
   secondaryHover: "#5F9EA0",
   yellow: "#808000",
@@ -23,11 +24,12 @@ const dark = {
   blackHover: "#f2f2f3",
   black70: "#8899A6",
   black50: "#9A9A9A",
-  white: "rgba(45,40,49,0.9)",
+  white: "rgba(45,40,49,0.95)",
   whiteHover:
-    "linear-gradient(0deg, rgba(45,40,49,0.9) 0%, rgba(45,40,49,0.8) 40%, rgba(45,40,49,0.2) 100%)",
+    "linear-gradient(0deg, rgba(45,40,49,0.95) 0%, rgba(45,40,49,0.8) 40%, rgba(45,40,49,0.2) 100%)",
   primary: "rgb(224,69,102)",
-  primaryHover: "linear-gradient(0deg, rgb(235,139,135) 0%, rgb(224,69,102) 100%)",
+  primaryHover:
+    "linear-gradient(0deg, rgb(235,139,135) 0%, rgb(224,69,102) 100%)",
   secondary: "rgb(235,139,135)",
   secondaryHover: "#5F9EA0",
   yellow: "#808000",

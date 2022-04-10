@@ -290,13 +290,6 @@ const Navbar = () => {
           <span>{playing ? "Pause" : "Play"}</span>
         </Button>
         <Segment display="none">
-          <iframe
-            title="audioFrame"
-            src={sound}
-            type="audio/mp3"
-            allow="autoplay"
-            style={{ display: "none" }}
-          ></iframe>
           <ReactAudioPlayer
             id="audio"
             src={sound}

@@ -9,18 +9,50 @@ import Navbar from "./components/Navbar";
 import ThemeProvider from "./containers/Theme";
 import FixedNav from "./components/FixedNav";
 import { CircleAbsoluteBottom } from "./views/Home/styles";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Segment from "./components/Segment";
 import "./App.css";
+import Hero from "./views/Home/Hero";
+import { useSearchParams } from "react-router-dom";
+import styled from "styled-components";
 
 const Home = lazy(() => import("./views/Home"));
 
+const StyledCover = styled(Segment)`
+  top: 0;
+  transition: all 1s ease;
+
+  &.uncovered {
+    top: -100%;
+  }
+`;
+
 function App() {
+  const [query] = useSearchParams();
+  const guest = query.get("guest");
+  const [cover, setCover] = useState(true);
+
+  useEffect(() => {
+    cover
+      ? (document.body.style.overflowY = "hidden")
+      : (document.body.style.overflowY = "auto");
+  }, [cover]);
+
   return (
     <div>
       <ThemeProvider>
         <GlobalStyle />
         <FixedWrapper id="fixedBody">
+          <StyledCover
+            className={cover ? "covered" : "uncovered"}
+            position="fixed"
+            zIndex={10000}
+            top="0"
+            left="0"
+            width="100%"
+          >
+            <Hero guest={guest} cover onClick={() => setCover(false)} />
+          </StyledCover>
           <DrawerProvider>
             <Navbar />
           </DrawerProvider>
