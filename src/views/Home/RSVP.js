@@ -282,7 +282,7 @@ const RSVP = ({ guest }) => {
           <Col md={12} {...colProps}>
             <Card
               px={16}
-              maxWidth={400}
+              maxWidth={300}
               alignItems="center"
               justifyContent="center"
               display="flex"

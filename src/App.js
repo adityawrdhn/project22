@@ -20,10 +20,10 @@ const Home = lazy(() => import("./views/Home"));
 
 const StyledCover = styled(Segment)`
   top: 0;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
 
   &.uncovered {
-    top: -100%;
+    top: -150%;
   }
 `;
 
@@ -50,6 +50,7 @@ function App() {
             top="0"
             left="0"
             width="100%"
+            height="100%"
           >
             <Hero guest={guest} cover onClick={() => setCover(false)} />
           </StyledCover>

@@ -113,7 +113,7 @@ const Hero = ({ guest, cover, onClick }) => {
       </Segment>
       <Segment
         position="absolute"
-        bottom={50}
+        bottom={100}
         left={0}
         right={0}
         display="flex"
