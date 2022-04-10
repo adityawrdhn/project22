@@ -1,0 +1,9 @@
+type Wedding {
+    name: String!
+    message: String
+    attend: Boolean
+    created: String!
+}
+type Query {
+    wedding: [Wedding!]
+}

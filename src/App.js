@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  ContentWrapper,
+  FixedWrapper,
+  GlobalStyle,
+  ScrollWrapper,
+} from "./theme/GlobalStyle";
+import DrawerProvider from "./containers/Drawer";
+import Navbar from "./components/Navbar";
+import ThemeProvider from "./containers/Theme";
+import FixedNav from "./components/FixedNav";
+import { CircleAbsoluteBottom } from "./views/Home/styles";
+import { lazy, Suspense } from "react";
+import Segment from "./components/Segment";
+import "./App.css";
+
+const Home = lazy(() => import("./views/Home"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider>
+        <GlobalStyle />
+        <FixedWrapper id="fixedBody">
+          <DrawerProvider>
+            <Navbar />
+          </DrawerProvider>
+          <FixedNav />
+          <ContentWrapper id="content">
+            <ScrollWrapper fullWidth noGutter id="scroller">
+              <Suspense
+                fallback={
+                  <Segment
+                    position="fixed"
+                    left="0"
+                    top="0"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    height="100%"
+                    width="100%"
+                    bg="white"
+                  >
+                    loading...
+                  </Segment>
+                }
+              >
+                <Home />
+              </Suspense>
+            </ScrollWrapper>
+            <CircleAbsoluteBottom />
+          </ContentWrapper>
+        </FixedWrapper>
+      </ThemeProvider>
     </div>
   );
 }
