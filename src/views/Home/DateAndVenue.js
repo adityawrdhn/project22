@@ -11,6 +11,7 @@ import { mapPin } from "react-icons-kit/feather";
 import { Section } from "./styles";
 import ImageEffect from "../../components/ImageEffect";
 import f2 from "../../assets/f2.jpg";
+import { calendar } from "react-icons-kit/feather";
 
 const TextTitle = styled.h1`
   display: inline-block;
@@ -114,12 +115,22 @@ const DateAndVenue = () => {
                       <TextTag mb={0} pr={16} textAlign="center">
                         <em>May 21, 2022</em>
                       </TextTag>
-                      <TextTag mb={0} pr={16} textAlign="center">
+                      <TextTag mb={16} pr={16} textAlign="center">
                         <TextCaption mb={0} mr={8} display="inline">
                           at
                         </TextCaption>
                         <em>12pm - 2.30pm</em>
                       </TextTag>
+                      <TextInfo mb={0} textAlign="center">
+                        <a
+                          target="_blank"
+                          href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MHVtbW1rbGltN3VjbG1sOGNyZHM2a2c0OGggbTQ4dGFibXJ2Y251MHBrbHIwbTJoNXZvaThAZw&tmsrc=m48tabmrvcnu0pklr0m2h5voi8%40group.calendar.google.com"
+                          rel="noreferrer"
+                        >
+                          <Icon icon={calendar} size={20} />
+                          <span>Add to Calendar</span>
+                        </a>
+                      </TextInfo>
                     </Col>
                   </Row>
                 </Card>

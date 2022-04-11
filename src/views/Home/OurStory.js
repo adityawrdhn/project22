@@ -177,7 +177,7 @@ const OurStory = () => {
                     By the irony of fate, we met at a stationery shop in our
                     hometown & chewed the fat for about five mins which brought
                     both of us to realize that we live in the same neighborhood,
-                    work in Jakarta, and are currently at home due to the
+                    work in Jakarta, and currently at home due to the
                     pandemic, but not in any way knew each other before. Who
                     would have thought, rite? We were thoroughly bowled over! 🙀😹
                   </p>
