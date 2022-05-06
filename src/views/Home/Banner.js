@@ -44,14 +44,11 @@ const TextCaption = styled.p`
   ${layout};
   ${space};
   ${typography};
-  em {
-    text-decoration: underline;
+  a:-webkit-any-link {
+    font-weight: 600;
     color: ${(p) => p.theme.colors.primary};
-    a:-webkit-any-link {
-      color: ${(p) => p.theme.colors.primary};
-      cursor: pointer;
-      text-decoration: underline;
-    }
+    cursor: pointer;
+    text-decoration: none;
   }
 `;
 
@@ -83,9 +80,33 @@ const Banner = () => {
           </TextTitle>
         </Fade>
         <Fade bottom>
-          <TextCaption>
-            Share the Day on Instagram and Tag Us Both at @Adityawardhana
-            @Signoraprianda with this Hashtag
+          <TextCaption px={12}>
+            Kindly share the Day on Instagram & use our wedding filter that
+            available on{" "}
+            <a
+              href="https://instagram.com/adityawardhana"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              @adityawardhana
+            </a>{" "}
+            & tag us both at{" "}
+            <a
+              href="https://instagram.com/adityawardhana"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @adityawardhana
+            </a>{" "}
+            <a
+              href="https://instagram.com/signoraprianda"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @signoraprianda
+            </a>{" "}
+            with this hashtag
           </TextCaption>
         </Fade>
       </Segment>

@@ -103,7 +103,7 @@ const Hero = ({ guest, cover, onClick }) => {
         width="100%"
       >
         <Fade up>
-          <TextInfo mb={16} cover={cover}>
+          <TextInfo mb={16} mt={0} cover={cover}>
             THE WEDDING OF
           </TextInfo>
           <TextTitle mb={16} px={8} cover={cover}>
